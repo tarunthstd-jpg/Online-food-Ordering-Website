@@ -1,97 +1,72 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+function orderFood(){
+
+let name = document.getElementById("name").value;
+let mobile = document.getElementById("mobile").value;
+let address = document.getElementById("address").value;
+
+if(name=="" || mobile=="" || address==""){
+    alert("Please fill all details");
+    return;
 }
 
-body{
-    background:#f5f5f5;
+if(mobile.length!=10){
+    alert("Enter a valid 10-digit mobile number");
+    return;
 }
 
-header{
-    background:#d35400;
-    color:white;
-    text-align:center;
-    padding:25px;
+let total = 0;
+let output = "";
+
+output += "<h3>Customer : " + name + "</h3>";
+output += "<p>Mobile : " + mobile + "</p>";
+output += "<p>Address : " + address + "</p><hr>";
+
+function addItem(checkId, qtyId, item, price){
+
+if(document.getElementById(checkId).checked){
+
+let qty = Number(document.getElementById(qtyId).value);
+
+if(qty>0){
+
+let subtotal = qty * price;
+
+total += subtotal;
+
+output += item + " x" + qty +
+" = ₹" + subtotal + "<br>";
+
 }
 
-header h1{
-    margin-bottom:10px;
 }
 
-.container{
-    width:90%;
-    margin:20px auto;
 }
 
-h2{
-    color:#d35400;
-    margin:20px 0;
-}
+addItem("vegburger","vbqty","Veg Burger",120);
+addItem("vegpizza","vpqty","Veg Pizza",250);
+addItem("sandwich","sqty","Sandwich",90);
+addItem("paneerroll","prqty","Paneer Roll",110);
+addItem("noodles","nqty","Veg Noodles",140);
+addItem("fries","fqty","French Fries",80);
 
-.menu{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
+addItem("chickenburger","cbqty","Chicken Burger",150);
+addItem("chickenpizza","cpqty","Chicken Pizza",300);
+addItem("chickenroll","crqty","Chicken Roll",170);
+addItem("friedrice","frqty","Chicken Fried Rice",180);
+addItem("wings","wqty","Chicken Wings",220);
+addItem("shawarma","shqty","Shawarma",160);
 
-.card{
-    background:white;
-    width:250px;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px lightgray;
-}
+addItem("juice","jqty","Juice",60);
+addItem("coffee","coqty","Coffee",50);
+addItem("milkshake","msqty","Milkshake",90);
+addItem("tea","tqty","Tea",30);
+addItem("lemon","lqty","Lemon Soda",40);
+addItem("softdrink","sdqty","Soft Drink",45);
 
-.card:hover{
-    transform:scale(1.03);
-    transition:0.3s;
-}
+output += "<hr>";
+output += "<h2>Grand Total = ₹" + total + "</h2>";
+output += "<h3>Thank You for Ordering!</h3>";
 
-.card input[type="number"]{
-    width:70px;
-    padding:5px;
-}
-
-input, textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid gray;
-    border-radius:5px;
-}
-
-button{
-    background:#d35400;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-button:hover{
-    background:#a04000;
-}
-
-#summary{
-    margin-top:20px;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0px 0px 10px lightgray;
-}
-
-@media(max-width:768px){
-
-.menu{
-    flex-direction:column;
-}
-
-.card{
-    width:100%;
-}
+document.getElementById("summary").innerHTML = output;
 
 }
