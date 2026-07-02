@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MPN Food Court</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> MPN Food Court</h1>
+        <h3>Owner : TARUN N</h3>
+        <p> Mobile : 9876543210</p>
+        <p> Address : MPN Food Court, Chennai, Tamil Nadu</p>
+    </header>
+
+    <div class="container">
+
+       
+
+        <h2> Veg Menu</h2>
+
+        <div class="menu">
+
+            <div class="card">
+                <input type="checkbox" id="vegburger">
+                Veg Burger - ₹120
+                <br><br>
+                Quantity :
+                <input type="number" id="vbqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="vegpizza">
+                Veg Pizza - ₹250
+                <br><br>
+                Quantity :
+                <input type="number" id="vpqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="sandwich">
+                Sandwich - ₹90
+                <br><br>
+                Quantity :
+                <input type="number" id="sqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="paneerroll">
+                Paneer Roll - ₹110
+                <br><br>
+                Quantity :
+                <input type="number" id="prqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="noodles">
+                Veg Noodles - ₹140
+                <br><br>
+                Quantity :
+                <input type="number" id="nqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="fries">
+                French Fries - ₹80
+                <br><br>
+                Quantity :
+                <input type="number" id="fqty" min="0" value="0">
+            </div>
+
+        </div>
+
+
+
+        <h2> Non-Veg Menu</h2>
+
+        <div class="menu">
+
+            <div class="card">
+                <input type="checkbox" id="chickenburger">
+                Chicken Burger - ₹150
+                <br><br>
+                Quantity :
+                <input type="number" id="cbqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="chickenpizza">
+                Chicken Pizza - ₹300
+                <br><br>
+                Quantity :
+                <input type="number" id="cpqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="chickenroll">
+                Chicken Roll - ₹170
+                <br><br>
+                Quantity :
+                <input type="number" id="crqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="friedrice">
+                Chicken Fried Rice - ₹180
+                <br><br>
+                Quantity :
+                <input type="number" id="frqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="wings">
+                Chicken Wings - ₹220
+                <br><br>
+                Quantity :
+                <input type="number" id="wqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="shawarma">
+                Shawarma - ₹160
+                <br><br>
+                Quantity :
+                <input type="number" id="shqty" min="0" value="0">
+            </div>
+
+        </div>
+
+
+       
+
+        <h2> Beverages</h2>
+
+        <div class="menu">
+
+            <div class="card">
+                <input type="checkbox" id="juice">
+                Juice - ₹60
+                <br><br>
+                Quantity :
+                <input type="number" id="jqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="coffee">
+                Coffee - ₹50
+                <br><br>
+                Quantity :
+                <input type="number" id="coqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="milkshake">
+                Milkshake - ₹90
+                <br><br>
+                Quantity :
+                <input type="number" id="msqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="tea">
+                Tea - ₹30
+                <br><br>
+                Quantity :
+                <input type="number" id="tqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="lemon">
+                Lemon Soda - ₹40
+                <br><br>
+                Quantity :
+                <input type="number" id="lqty" min="0" value="0">
+            </div>
+
+            <div class="card">
+                <input type="checkbox" id="softdrink">
+                Soft Drink - ₹45
+                <br><br>
+                Quantity :
+                <input type="number" id="sdqty" min="0" value="0">
+            </div>
+
+        </div>
+
+        <h2> Customer Details</h2>
+
+        <input type="text" id="name" placeholder="Enter Name">
+
+        <input type="text" id="mobile" placeholder="Enter Mobile Number">
+
+        <textarea id="address"
+            placeholder="Enter Address"></textarea>
+
+        <button onclick="orderFood()">
+            Place Order
+        </button>
+
+        <h2> Order Summary</h2>
+
+        <div id="summary"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
